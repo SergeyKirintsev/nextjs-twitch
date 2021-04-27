@@ -3,23 +3,6 @@ import styles from '../styles/Home.module.css'
 import Link from "next/link";
 
 export default function Home() {
-  const registerUser = async event => {
-    event.preventDefault()
-
-    const res = await fetch('/api/register', {
-      body: JSON.stringify({
-        name: event.target.name.value
-      }),
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      method: 'POST'
-    })
-
-    const result = await res.json()
-    console.log(result.user)
-    // result.user => 'Ada Lovelace'
-  }
 
   const tester = () => {
     const seekValue = document.querySelector('#video').value
@@ -29,7 +12,7 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Create Next App</title>
+        <title>Поиск видео на твитче</title>
         <link rel="icon" href="/favicon.ico"/>
       </Head>
 
@@ -47,7 +30,7 @@ export default function Home() {
 
         <form id="your_form" onSubmit={tester}>
           <label htmlFor="name">Введите название канала</label>
-          <input id="video" type="text" required />
+          <input id="video" type="text" required/>
           <button type="submit">Найти</button>
         </form>
 

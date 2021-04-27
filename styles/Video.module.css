@@ -1,0 +1,31 @@
+.card {
+    position: relative;
+    width: 320px;
+    height: 180px;
+}
+
+.link {
+    text-decoration: none;
+    position: absolute;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.title {
+    position: absolute;
+    color: #eaeaea;
+    opacity: 0;
+    transition: 0.7s;
+}
+
+.link:hover .title {
+    opacity: 1;
+}
+
+.link:hover {
+    background-color: rgba(42, 44, 47, 0.8);
+    outline: 3px solid red;
+}
