@@ -5,7 +5,9 @@ export default function ErrorPage() {
   return (
     <>
       <h1 className={styles.error}>Упс, нет страницы!</h1>
-      <Link href={'/'}><a>Вернуться на главную</a></Link>
+      <p>
+        <Link href={'/'}><a>Вернуться на главную</a></Link>
+      </p>
     </>
   )
 }

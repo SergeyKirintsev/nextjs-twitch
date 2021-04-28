@@ -4,9 +4,9 @@ import Link from "next/link";
 
 export default function Home() {
 
-  const tester = () => {
+  const handleSubmit = () => {
     const seekValue = document.querySelector('#video').value
-    your_form.action = `/video/${seekValue}`;
+    form.action = `/video/${seekValue}`;
   }
 
   return (
@@ -17,23 +17,11 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to app!
-        </h1>
-
-        <p>
-          <Link href={'/about'}><a>Избранное</a></Link>
-        </p>
-        <p>
-          <Link href={'/video/42'}><a>Поиск видео</a></Link>
-        </p>
-
-        <form id="your_form" onSubmit={tester}>
+        <form id="form" onSubmit={handleSubmit}>
           <label htmlFor="name">Введите название канала</label>
           <input id="video" type="text" required/>
           <button type="submit">Найти</button>
         </form>
-
       </main>
 
     </div>
