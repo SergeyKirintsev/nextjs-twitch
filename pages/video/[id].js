@@ -18,7 +18,7 @@ export async function getServerSideProps({params}) {
     'Accept': 'application/vnd.twitchtv.v5+json',
   }
 
-  const resUser = await м(`https://api.twitch.tv/kraken/users?login=${params.id}`, {headers})
+  const resUser = await fetch(`https://api.twitch.tv/kraken/users?login=${params.id}`, {headers})
   const dataUser = await resUser.json()
   const idUser = dataUser.users[0]._id
 
